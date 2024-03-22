@@ -5,21 +5,41 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
+        Locale.setDefault(Locale.US);
+        double total = 0.0;
+        int codigo, quantidade = 0;
 
-        double valor = 0.0;
+        codigo = scanner.nextInt();
+        quantidade = scanner.nextInt();
 
-        valor = scanner.nextDouble();
+        switch (codigo) {
+            case 1:
+                total = 4.00 * quantidade;
+                System.out.printf("Total: R$ %.2f%n", total);
+                break;
 
-        if (valor >= 0 && valor <= 25) {
-            System.out.println("Intervalo [0,25]");
-        } else if (valor > 25 && valor <= 50) {
-            System.out.println("Intervalo (25,50]");
-        } else if (valor > 50 && valor <= 75) {
-            System.out.println("Intervalo (50,75]");
-        } else if (valor > 75 && valor <= 100) {
-            System.out.println("Intervalo (75,100]");
-        } else {
-            System.out.println("Fora de intervalo");
+            case 2:
+                total = 4.50 * quantidade;
+                System.out.printf("Total: R$ %.2f%n", total);
+                break;
+
+            case 3:
+                total = 5.00 * quantidade;
+                System.out.printf("Total: R$ %.2f%n", total);
+                break;
+
+            case 4:
+                total = 2.00 * quantidade;
+                System.out.printf("Total: R$ %.2f%n", total);
+                break;
+                
+            case 5:
+                total = 1.50 * quantidade;
+                System.out.printf("Total: R$ %.2f%n", total);
+                break;
+        
+            default:
+                break;
         }
     }
 }
