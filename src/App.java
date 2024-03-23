@@ -6,40 +6,48 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
         Locale.setDefault(Locale.US);
-        double total = 0.0;
-        int codigo, quantidade = 0;
-
-        codigo = scanner.nextInt();
-        quantidade = scanner.nextInt();
-
-        switch (codigo) {
-            case 1:
-                total = 4.00 * quantidade;
-                System.out.printf("Total: R$ %.2f%n", total);
-                break;
-
-            case 2:
-                total = 4.50 * quantidade;
-                System.out.printf("Total: R$ %.2f%n", total);
-                break;
-
-            case 3:
-                total = 5.00 * quantidade;
-                System.out.printf("Total: R$ %.2f%n", total);
-                break;
-
-            case 4:
-                total = 2.00 * quantidade;
-                System.out.printf("Total: R$ %.2f%n", total);
-                break;
-                
-            case 5:
-                total = 1.50 * quantidade;
-                System.out.printf("Total: R$ %.2f%n", total);
-                break;
         
-            default:
-                break;
+        Double num1, num2, num3, num4, media;
+
+        num1 = scanner.nextDouble();
+        num2 = scanner.nextDouble();
+        num3 = scanner.nextDouble();
+        num4 = scanner.nextDouble();
+
+        num1 *= 0.2;
+        num2 *= 0.3;
+        num3 *= 0.4;
+        num4 *= 0.1;
+
+        media = num1 + num2 + num3 + num4;
+
+        String mediaFormated = media.toString();
+
+        mediaFormated = mediaFormated.substring(0, 3);
+
+        System.out.println("Media: " + mediaFormated);
+
+        if (media >= 7) {
+            System.out.println("Aluno aprovado.");
+        } else if (media >= 5) {
+            double notaExame = 0.0;
+
+            System.out.println("Aluno em exame.");
+
+            notaExame = scanner.nextDouble();
+            System.out.printf("Nota do exame: %.1f%n", notaExame);
+
+            media = (media + notaExame) / 2;
+
+            if (media >= 5) {
+                System.out.println("Aluno aprovado.");
+            } else {
+                System.out.println("Aluno reprovado.");
+            }
+
+            System.out.printf("Media final: %.1f%n", media);
+        } else {
+            System.out.println("Aluno reprovado.");
         }
     }
 }
