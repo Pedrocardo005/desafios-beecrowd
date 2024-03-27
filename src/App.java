@@ -2,27 +2,43 @@ import java.util.Scanner;
 
 public class App {
 
-    static int busca(int entrada, int divisor) {
-		if (entrada % divisor != 0 || entrada % divisor == 0) {
-			int valor = 0;
-			
-			valor = (int) entrada / divisor;
-			System.out.printf("%d nota(s) de R$ %d,00%n", valor, divisor);
-			entrada = entrada % divisor;
+	public static void ordenar(int[] lista) {
+
+		for (int x = 0; x < lista.length; x++) {
+			for (int i = x + 1; i < lista.length; i++) {
+				if(lista[x] > lista[i]) {
+					int buffer = lista[x];
+					lista[x] = lista[i];
+					lista[i] = buffer;
+				}
+			}
 		}
-		return entrada;
+
+		for (int y = 0; y < lista.length; y++) {
+			System.out.println(lista[y]);
+		}
 	}
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-		int entrada = 0;
-		entrada = sc.nextInt();
-		int[] listagem = {100, 50, 20, 10, 5, 2, 1};
-		
-        System.out.println(entrada);
-		for (int i = 0; i < listagem.length; i++) {
-			entrada = busca(entrada, listagem[i]);
+		int num1, num2, num3;
+
+		int[] arrayFromNumbers = {0,0,0};
+
+		num1 = sc.nextInt();
+		num2 = sc.nextInt();
+		num3 = sc.nextInt();
+
+		arrayFromNumbers[0] = num1;
+		arrayFromNumbers[1] = num2;
+		arrayFromNumbers[2] = num3;
+
+		ordenar(arrayFromNumbers.clone());
+
+		System.out.println("");
+
+		for (int x = 0; x < arrayFromNumbers.length; x++) {
+			System.out.println(arrayFromNumbers[x]);
 		}
- 
     }   
 }
