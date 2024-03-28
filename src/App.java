@@ -1,44 +1,26 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
 
-	public static void ordenar(int[] lista) {
-
-		for (int x = 0; x < lista.length; x++) {
-			for (int i = x + 1; i < lista.length; i++) {
-				if(lista[x] > lista[i]) {
-					int buffer = lista[x];
-					lista[x] = lista[i];
-					lista[i] = buffer;
-				}
-			}
-		}
-
-		for (int y = 0; y < lista.length; y++) {
-			System.out.println(lista[y]);
-		}
-	}
-
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-		int num1, num2, num3;
+		sc.useLocale(Locale.US);
+		Locale.setDefault(Locale.US);
+		double a, b, c;
 
-		int[] arrayFromNumbers = {0,0,0};
+		a = sc.nextDouble();
+		b = sc.nextDouble();
+		c = sc.nextDouble();
 
-		num1 = sc.nextInt();
-		num2 = sc.nextInt();
-		num3 = sc.nextInt();
+		if (a + b > c && a + c > b && c + b > a) {
+			double perimetro = a + b + c;
 
-		arrayFromNumbers[0] = num1;
-		arrayFromNumbers[1] = num2;
-		arrayFromNumbers[2] = num3;
+			System.out.printf("Perimetro = %.1f%n", perimetro);
+		} else {
+			double area = ((a + b) * c) / 2;
 
-		ordenar(arrayFromNumbers.clone());
-
-		System.out.println("");
-
-		for (int x = 0; x < arrayFromNumbers.length; x++) {
-			System.out.println(arrayFromNumbers[x]);
+			System.out.printf("Area = %.1f%n", area);
 		}
     }   
 }
