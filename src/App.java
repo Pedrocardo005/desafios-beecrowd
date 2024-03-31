@@ -18,38 +18,15 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-		double[] listagem = {0.0, 0.0, 0.0};
+		int numA, numB;
 
-		listagem[0] = sc.nextDouble();
-		listagem[1] = sc.nextDouble();
-		listagem[2] = sc.nextDouble();
-		
-		listagem = organizar(listagem);
+		numA = sc.nextInt();
+		numB = sc.nextInt();
 
-		if (listagem[0] >= (listagem[1] + listagem[2])) {
-			System.out.println("NAO FORMA TRIANGULO");
-			System.exit(0);
-		}
-
-		if ((listagem[0] * listagem[0]) == ((listagem[1] * listagem[1]) + (listagem[2] * listagem[2]))) {
-			System.out.println("TRIANGULO RETANGULO");
-		}
-
-		if ((listagem[0] * listagem[0]) > ((listagem[1] * listagem[1]) + (listagem[2] * listagem[2]))) {
-			System.out.println("TRIANGULO OBTUSANGULO");
-		}
-
-		if ((listagem[0] * listagem[0]) < ((listagem[1] * listagem[1]) + (listagem[2] * listagem[2]))) {
-			System.out.println("TRIANGULO ACUTANGULO");
-		}
-
-		if (listagem[0] == listagem[1] && listagem[1] == listagem[2]) {
-			System.out.println("TRIANGULO EQUILATERO");
-			System.exit(0);
-		}
-
-		if (listagem[0] == listagem[1] || listagem[1] == listagem[2] || listagem[0] == listagem[2]) {
-			System.out.println("TRIANGULO ISOSCELES");
+		if (numB % numA == 0 || numA % numB == 0) {
+			System.out.println("Sao Multiplos");
+		} else {
+			System.out.println("Nao sao Multiplos");
 		}
     }
 }
