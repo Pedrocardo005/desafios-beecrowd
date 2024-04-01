@@ -2,31 +2,19 @@ import java.util.Scanner;
 
 public class App {
 
-	public static double[] organizar(double[] listagem) {
-		for (int i = 0; i < listagem.length; i++) {
-			for (int j = i; j < listagem.length; j++) {
-				if (listagem[i] < listagem[j]) {
-					double buffer = listagem[i];
-					listagem[i] = listagem[j];
-					listagem[j] = buffer;
-				}
-			}
-		}
-
-		return listagem;
-	}
-
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-		int numA, numB;
+		int numA, numB, horas;
 
 		numA = sc.nextInt();
 		numB = sc.nextInt();
 
-		if (numB % numA == 0 || numA % numB == 0) {
-			System.out.println("Sao Multiplos");
+		if (numA < numB) {
+			horas = numB - numA;
 		} else {
-			System.out.println("Nao sao Multiplos");
+			horas = 24 - (numA - numB);
 		}
+
+		System.out.printf("O JOGO DUROU %d HORA(S)%n", horas);
     }
 }
