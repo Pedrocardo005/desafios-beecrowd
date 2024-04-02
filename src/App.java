@@ -4,17 +4,12 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-		int numA, numB, horas;
+		int horaInicial, minutoInicial, horaFinal, minutoFinal;
 
-		numA = sc.nextInt();
-		numB = sc.nextInt();
+		horaInicial = sc.nextInt();
+		minutoInicial = sc.nextInt();
+		horaFinal = sc.nextInt();
+		minutoFinal = sc.nextInt();
 
-		if (numA < numB) {
-			horas = numB - numA;
-		} else {
-			horas = 24 - (numA - numB);
-		}
-
-		System.out.printf("O JOGO DUROU %d HORA(S)%n", horas);
     }
 }
