@@ -4,26 +4,23 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-		int horaInicial, minutoInicial, horaFinal, minutoFinal, 
-			horaMinutoInicial, horaMinutoFinal, diferenca,
-			minutosSobra, horas;
+		int[] lista = {0,0,0,0,0};
+		int t;
+		int encontrado = 0;
 
-		horaInicial = sc.nextInt();
-		minutoInicial = sc.nextInt();
-		horaFinal = sc.nextInt();
-		minutoFinal = sc.nextInt();
+		t = sc.nextInt();
+		lista[0] = sc.nextInt();
+		lista[1] = sc.nextInt();
+		lista[2] = sc.nextInt();
+		lista[3] = sc.nextInt();
+		lista[4] = sc.nextInt();
 
-		if (horaFinal < horaInicial && minutoFinal < minutoInicial) {
-			horaFinal += 24;
+		for (int i = 0; i < lista.length; i++) {
+			if (lista[i] == t) {
+				encontrado++;
+			}
 		}
 
-		horaMinutoInicial = (horaInicial * 60) + minutoInicial;
-		horaMinutoFinal = (horaFinal * 60) + minutoFinal;
-
-		diferenca = horaMinutoFinal - horaMinutoInicial;
-		minutosSobra = diferenca % 60;
-		horas = diferenca / 60;
-
-		System.out.printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)%n", horas, minutosSobra);
+		System.out.println(encontrado);
     }
 }
