@@ -4,13 +4,15 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-
         int numero = sc.nextInt();
+        int encontrado = 0;
 
-        for (int x = 1; x <= numero; x++) {
-            if (x % 2 != 0) {
-                System.out.println(x);
-            }            
+        while (encontrado < 6) {
+            if (numero % 2 != 0) {
+                System.out.println(numero);
+                encontrado++;
+            }
+            numero++;
         }
     }
 }
