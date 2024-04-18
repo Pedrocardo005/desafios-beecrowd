@@ -4,15 +4,26 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int numero = sc.nextInt();
-        int encontrado = 0;
+        int firstNum, secondNum, lowerNum, gratterNum;
+        int soma = 0;
 
-        while (encontrado < 6) {
-            if (numero % 2 != 0) {
-                System.out.println(numero);
-                encontrado++;
-            }
-            numero++;
+        firstNum = sc.nextInt();
+        secondNum = sc.nextInt();
+
+        if (firstNum > secondNum) {
+            lowerNum = secondNum;
+            gratterNum = firstNum;
+        } else {
+            lowerNum = firstNum;
+            gratterNum = secondNum;
         }
+
+        for (int i = lowerNum + 1; i < gratterNum ; i++) {
+            if (i % 2 != 0) {
+                soma += i;
+            }
+        }
+
+        System.out.println(soma);
     }
 }
