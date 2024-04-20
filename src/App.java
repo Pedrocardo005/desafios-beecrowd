@@ -4,26 +4,23 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int firstNum, secondNum, lowerNum, gratterNum;
-        int soma = 0;
+        int qtdValores, dentroIntervalo, foraIntervalo;
 
-        firstNum = sc.nextInt();
-        secondNum = sc.nextInt();
+        qtdValores = dentroIntervalo = foraIntervalo = 0;
 
-        if (firstNum > secondNum) {
-            lowerNum = secondNum;
-            gratterNum = firstNum;
-        } else {
-            lowerNum = firstNum;
-            gratterNum = secondNum;
-        }
+        qtdValores = sc.nextInt();
 
-        for (int i = lowerNum + 1; i < gratterNum ; i++) {
-            if (i % 2 != 0) {
-                soma += i;
+        for (int i = 0; i < qtdValores; i++) {
+            int valor = sc.nextInt();
+
+            if (valor >= 10 && valor <= 20) {
+                dentroIntervalo++;
+            } else {
+                foraIntervalo++;
             }
         }
 
-        System.out.println(soma);
+        System.out.println(dentroIntervalo + " in");
+        System.out.println(foraIntervalo + " out");
     }
 }
