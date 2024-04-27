@@ -1,34 +1,8 @@
-number = gets.chomp
-number = number.to_i
+numero = gets.chomp
+numero = numero.to_i
 
-lista = [0]
-
-for i in 1..number
-  number_buffer = gets.chomp
-  lista[i] = number_buffer.to_i
-end
-
-for i in 1..number
-  element = lista[i]
-
-  if element == 0
-    puts "NULL"
-    next
-  end
-
-  if element.even?
-    print "EVEN "
-    if element > 0
-      puts "POSITIVE"
-    else
-      puts "NEGATIVE"
-    end
-  else
-    print "ODD "
-    if element > 0
-      puts "POSITIVE"
-    else
-      puts "NEGATIVE"
-    end
+for n in 2..9999
+  if n % numero == 2
+    puts n
   end
 end
