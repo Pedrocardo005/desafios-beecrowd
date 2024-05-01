@@ -4,23 +4,13 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int qtdValores, dentroIntervalo, foraIntervalo;
+        int n = 0;
 
-        qtdValores = dentroIntervalo = foraIntervalo = 0;
+        n = sc.nextInt();
 
-        qtdValores = sc.nextInt();
-
-        for (int i = 0; i < qtdValores; i++) {
-            int valor = sc.nextInt();
-
-            if (valor >= 10 && valor <= 20) {
-                dentroIntervalo++;
-            } else {
-                foraIntervalo++;
-            }
+        for (int i = 1; i < 11; i++) {
+            int multiplicacao = i * n;
+            System.out.printf("%d x %d = %d%n", i, n, multiplicacao);
         }
-
-        System.out.println(dentroIntervalo + " in");
-        System.out.println(foraIntervalo + " out");
     }
 }
