@@ -5,8 +5,9 @@ public class App {
         int i;
 
         for (i = 1; i <= 9; i += 2) {
-            for (int j : js) {
-                System.out.printf("I=%d J=%d%n", i, j);
+            for (int j = 0; j < js.length; j++) {
+                System.out.printf("I=%d J=%d%n", i, js[j]);
+                js[j] += 2;
             }
         }
     }
