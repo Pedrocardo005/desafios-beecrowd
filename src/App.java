@@ -1,23 +1,40 @@
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
-        Locale.setDefault(Locale.US);
-        double[] js = {1, 2, 3};
-        double i;
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> results = new ArrayList<Integer>();
+        int n = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < n; i++) {
+            int first, second, biger, lower, som = 0;
+            String line = sc.nextLine();
+            String[] lineStrings = line.split(" ");
 
-        for (i = 0; i <= 20; i += 2) {
-            double ii = i / 10.0;
-            for (int j = 0; j < js.length; j++) {
-                if ((int) ii == ii) {
-                    System.out.printf("I=%.0f J=%.0f%n", ii, js[j]);
-                } else {
-                    System.out.printf("I=%.1f J=%.1f%n", ii, js[j]);
-                }
-                
-                js[j] += 0.2;
+            first = Integer.parseInt(lineStrings[0]);
+            second = Integer.parseInt(lineStrings[1]);
+
+            if (first > second) {
+                biger = first;
+                lower = second;
+            } else {
+                biger = second;
+                lower = first;
             }
+
+            for (int j = lower + 1; j < biger; j++) {
+                if (j % 2 != 0) {
+                    som += j;
+                }
+            }
+
+            results.add(som);
+        }
+
+        for (int index = 0; index < results.size(); index++) {
+            System.out.println(results.get(index));
         }
     }
 }
