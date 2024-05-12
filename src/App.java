@@ -5,36 +5,29 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> results = new ArrayList<Integer>();
-        int n = sc.nextInt();
-        sc.nextLine();
-        for (int i = 0; i < n; i++) {
-            int first, second, biger, lower, som = 0;
-            String line = sc.nextLine();
-            String[] lineStrings = line.split(" ");
+        ArrayList<String> results = new ArrayList<String>();
+        boolean isRuning = true;
 
-            first = Integer.parseInt(lineStrings[0]);
-            second = Integer.parseInt(lineStrings[1]);
+        while (isRuning) {
+            int bigger, lower;
+            String lineString = sc.nextLine();
+            String[] pairString = lineString.split(" ");
+            int first = Integer.parseInt(pairString[0]);       
+            int second = Integer.parseInt(pairString[1]);
+
+            if (first <= 0 || second <= 0) {
+                break;
+            }
 
             if (first > second) {
-                biger = first;
+                bigger = first;
                 lower = second;
             } else {
-                biger = second;
                 lower = first;
+                bigger = second;
             }
 
-            for (int j = lower + 1; j < biger; j++) {
-                if (j % 2 != 0) {
-                    som += j;
-                }
-            }
-
-            results.add(som);
-        }
-
-        for (int index = 0; index < results.size(); index++) {
-            System.out.println(results.get(index));
+            String resultString = String.format("", args);
         }
     }
 }
