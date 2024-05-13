@@ -9,11 +9,12 @@ public class App {
         boolean isRuning = true;
 
         while (isRuning) {
-            int bigger, lower;
+            int bigger, lower, soma = 0;
             String lineString = sc.nextLine();
             String[] pairString = lineString.split(" ");
             int first = Integer.parseInt(pairString[0]);       
             int second = Integer.parseInt(pairString[1]);
+            String resultString = "";
 
             if (first <= 0 || second <= 0) {
                 break;
@@ -27,7 +28,17 @@ public class App {
                 bigger = second;
             }
 
-            String resultString = String.format("", args);
+            for (int index = lower; index <= bigger; index++) {
+                resultString = resultString.concat(index + " ");
+                soma += index;
+            }
+
+            resultString = resultString.concat("Sum=" + soma);
+            results.add(resultString);
+        }
+
+        for (int i = 0; i < results.size(); i++) {
+            System.out.println(results.get(i));
         }
     }
 }
