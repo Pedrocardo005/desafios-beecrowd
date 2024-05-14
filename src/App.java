@@ -9,32 +9,21 @@ public class App {
         boolean isRuning = true;
 
         while (isRuning) {
-            int bigger, lower, soma = 0;
             String lineString = sc.nextLine();
             String[] pairString = lineString.split(" ");
             int first = Integer.parseInt(pairString[0]);       
             int second = Integer.parseInt(pairString[1]);
-            String resultString = "";
-
-            if (first <= 0 || second <= 0) {
+            
+            if (first == second) {
                 break;
             }
-
+            
             if (first > second) {
-                bigger = first;
-                lower = second;
+                results.add("Decrescente");
             } else {
-                lower = first;
-                bigger = second;
+                results.add("Crescente");
             }
 
-            for (int index = lower; index <= bigger; index++) {
-                resultString = resultString.concat(index + " ");
-                soma += index;
-            }
-
-            resultString = resultString.concat("Sum=" + soma);
-            results.add(resultString);
         }
 
         for (int i = 0; i < results.size(); i++) {
