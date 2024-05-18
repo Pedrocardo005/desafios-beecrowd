@@ -5,30 +5,33 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Locale.setDefault(Locale.US);
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        double primeira, segunda, media;
+
+        primeira = 0;
+        segunda = 0;
         
-        int n = scanner.nextInt();
-        scanner.nextLine();
+        while (true) {
+            double numero;
 
-        for (int i = 0; i < n; i++) {
-            String line = scanner.nextLine();
-            String[] values = line.split(" ");
-            int first, second;
-            Double result;
+            numero = scan.nextDouble();
+            scan.nextLine();
 
-            first = Integer.parseInt(values[0]);
-            second = Integer.parseInt(values[1]);
+            if (numero < 0 || numero > 10) {
+                System.out.println("nota invalida");
+                continue;
+            }
 
-            try {
-                result = (double) first / second;
-                if (result.isInfinite()) {
-                    System.out.println("divisao impossivel");
-                } else {
-                    System.out.printf("%.1f%n", result);
-                }
-            } catch (Exception e) {
-                System.out.println("divisao impossivel");
+            if (primeira == 0) {
+                primeira = numero;
+            } else {
+                segunda = numero;
+                break;
             }
         }
+
+        media = (double) (primeira + segunda) / 2;
+
+        System.out.printf("media = %.2f%n", media);
     }
 }
