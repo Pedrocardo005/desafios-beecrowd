@@ -1,30 +1,26 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
-        Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
-        int first, second, big, low, sum = 0;
-
-        first = scan.nextInt();
-        second = scan.nextInt();
-
-        if (first > second) {
-            big = first;
-            low = second;
+        int num1, num2, bigger, smaller;
+        
+        num1 = scan.nextInt();
+        num2 = scan.nextInt();
+        
+        if (num1 > num2) {
+            bigger = num1;
+            smaller = num2;
         } else {
-            big = second;
-            low = first;
+            bigger = num2;
+            smaller = num1;
         }
         
-        for (int i = low; i <= big; i++) {
-            if (i % 13 != 0) {
-                sum += i;
+        for(int x = smaller + 1; x < bigger; x++) {
+            if(x % 5 == 2 || x % 5 == 3) {
+                System.out.println(x);
             }
         }
-
-        System.out.println(sum);
     }
 }
