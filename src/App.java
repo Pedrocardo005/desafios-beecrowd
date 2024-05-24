@@ -4,23 +4,29 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int num1, num2, bigger, smaller;
+        int alcool, gasolina, diesel;
+
+        alcool = 0;
+        gasolina = 0;
+        diesel = 0;
         
-        num1 = scan.nextInt();
-        num2 = scan.nextInt();
-        
-        if (num1 > num2) {
-            bigger = num1;
-            smaller = num2;
-        } else {
-            bigger = num2;
-            smaller = num1;
-        }
-        
-        for(int x = smaller + 1; x < bigger; x++) {
-            if(x % 5 == 2 || x % 5 == 3) {
-                System.out.println(x);
+        while(true) {
+            int valor = scan.nextInt();
+
+            if (valor == 1) {
+                alcool++;
+            } else if (valor == 2) {
+                gasolina++;
+            } else if (valor == 3) {
+                diesel++;
+            } else if (valor == 4) {
+                break;
             }
         }
+
+        System.out.println("MUITO OBRIGADO");
+        System.out.println("Alcool: " + alcool);
+        System.out.println("Gasolina: " + gasolina);
+        System.out.println("Diesel: " + diesel);
     }
 }
