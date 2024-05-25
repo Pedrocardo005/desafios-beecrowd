@@ -4,29 +4,19 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int alcool, gasolina, diesel;
-
-        alcool = 0;
-        gasolina = 0;
-        diesel = 0;
+        int entrada, numero = 1;
+        entrada = 0;
+        entrada = scan.nextInt();
         
-        while(true) {
-            int valor = scan.nextInt();
-
-            if (valor == 1) {
-                alcool++;
-            } else if (valor == 2) {
-                gasolina++;
-            } else if (valor == 3) {
-                diesel++;
-            } else if (valor == 4) {
-                break;
+        for(int x = 0; x < entrada; x++) {
+            for(int y = 0; y < 4; y++) {
+                if (y != 3) {
+                    System.out.printf("%d ", numero);
+                } else {
+                    System.out.printf("PUM%n");
+                }
+                numero++;
             }
         }
-
-        System.out.println("MUITO OBRIGADO");
-        System.out.println("Alcool: " + alcool);
-        System.out.println("Gasolina: " + gasolina);
-        System.out.println("Diesel: " + diesel);
     }
 }
