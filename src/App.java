@@ -4,19 +4,17 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int entrada, numero = 1;
-        entrada = 0;
+        int entrada, a, b, c;
         entrada = scan.nextInt();
+        a = 1;
+        b = 1;
+        c = 1;
         
-        for(int x = 0; x < entrada; x++) {
-            for(int y = 0; y < 4; y++) {
-                if (y != 3) {
-                    System.out.printf("%d ", numero);
-                } else {
-                    System.out.printf("PUM%n");
-                }
-                numero++;
-            }
+        for (int i = 0; i < entrada; i++) {
+            System.out.printf("%d %d %d%n", a, b, c);
+            a++;
+            b = a * a;
+            c = a * b;
         }
     }
 }
