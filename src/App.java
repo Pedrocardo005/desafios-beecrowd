@@ -4,14 +4,19 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int numero = scan.nextInt();
-        while(numero != 0) {
-            String texto = "1";
-            for (int x = 2; x <= numero; x++) {
-                texto += " " + x;
-            }
-            System.out.println(texto);
-            numero = scan.nextInt();
+        int x = scan.nextInt();
+        int z = scan.nextInt();
+        int somatorio = 0;
+        int qtdSomados = 0;
+        scan.nextLine();
+        while (z <= x) {
+            z = scan.nextInt();
         }
+
+        for (int i = x; somatorio <= z; i++) {
+            somatorio += i;
+            qtdSomados++;
+        }
+        System.out.println(qtdSomados);
     }
 }
