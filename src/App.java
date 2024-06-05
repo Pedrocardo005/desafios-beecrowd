@@ -4,19 +4,25 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int x = scan.nextInt();
-        int z = scan.nextInt();
-        int somatorio = 0;
-        int qtdSomados = 0;
-        scan.nextLine();
-        while (z <= x) {
-            z = scan.nextInt();
-        }
+        int n = scan.nextInt();
+        int[] lista = new int[n];
 
-        for (int i = x; somatorio <= z; i++) {
-            somatorio += i;
-            qtdSomados++;
+        for (int i = 0; i < n; i++) {
+            if (i == 0) {
+                lista[i] = 0;
+            } else if (i == 1) {
+                lista[i] = 1;
+            } else {
+                lista[i] = lista[i - 1] + lista[i - 2];
+            }
         }
-        System.out.println(qtdSomados);
+        
+        for (int i = 0; i < lista.length; i++) {
+            if (i < lista.length - 1) {
+                System.out.printf("%d ", lista[i]);
+            } else {
+                System.out.printf("%d%n", lista[i]);
+            }
+        }
     }
 }
