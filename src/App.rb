@@ -1,8 +1,7 @@
-numero = gets.chomp
-numero = numero.to_i
+s = 1.0
 
-for n in 2..9999
-  if n % numero == 2
-    puts n
-  end
+for n in 2..100
+  s = s + (1.0 / n)
 end
+
+puts "#{s.round(2)}"
