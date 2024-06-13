@@ -1,13 +1,11 @@
-s = 1.0
-numerador = 3.0
-divisor = 2.0
+numero = gets.chomp.to_i
+divisor = 1
 
-while numerador <= 39
-  s += numerador / divisor.to_f
+while divisor <= numero
+  if numero % divisor == 0
+    puts divisor
+  end
 
-  numerador += 2.0
-  divisor *= 2.0
+  divisor += 1
 end
 
-numero = sprintf('%.2f', s)
-puts numero
