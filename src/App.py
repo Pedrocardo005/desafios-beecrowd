@@ -1,13 +1,13 @@
-listagem = []
-negativos_ou_zero = []
+a = int(float(input()))
+n = 0
+while True:
+    n = int(float(input()))
 
-for x in range(0, 100):
-    numero = float(input())
-    listagem.append(numero)
+    if n > 0:
+        break
+somatorio = 0
+for x in range(0, n):
 
-    if numero <= 10:
-        negativos_ou_zero.append(x)
+    somatorio = somatorio + a + x
 
-for n in negativos_ou_zero:
-    print('A[{}] = {}'.format(n, listagem[n]))
-    
+print(somatorio)
