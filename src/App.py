@@ -1,12 +1,9 @@
-t = int(input())
-lista = []
-contagem = 0
+t = float(input())
+lista = [t]
 
-for x in range(0, 1000):
-    if contagem >= t:
-        contagem = 0
-    lista.append(contagem)
-    contagem += 1
+print('N[0] = {:.4f}'.format(lista[0]))
 
-for y in range(0, 1000):
-    print('N[{}] = {}'.format(y, lista[y]))
+for x in range(1, 100):
+    half = lista[x - 1] / 2
+    print('N[{}] = {:.4f}'.format(x, half))
+    lista.append(half)
