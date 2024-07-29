@@ -1,16 +1,12 @@
-def fibonacci(n):
-    if n <= 0:
-        return 0
-    if n == 1:
-        return 1
-    if n == 2:
-        return 1
-    resposta = fibonacci(n - 1) + fibonacci(n - 2)
-    return resposta
+t = int(input())
+lista = []
+contagem = 0
 
-valor = int(input())
+for x in range(0, 1000):
+    if contagem >= t:
+        contagem = 0
+    lista.append(contagem)
+    contagem += 1
 
-for x in range(0, valor):
-    _valor = int(input())
-    r = fibonacci(_valor)
-    print('Fib({}) = {}'.format(_valor, r))
+for y in range(0, 1000):
+    print('N[{}] = {}'.format(y, lista[y]))
