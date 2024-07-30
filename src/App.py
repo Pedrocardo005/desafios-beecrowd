@@ -1,9 +1,27 @@
-t = float(input())
-lista = [t]
+par = []
+impar = []
 
-print('N[0] = {:.4f}'.format(lista[0]))
+for x in range(0, 15):
+    n = int(input())
 
-for x in range(1, 100):
-    half = lista[x - 1] / 2
-    print('N[{}] = {:.4f}'.format(x, half))
-    lista.append(half)
+    if n % 2 == 0:
+        par.append(n)
+    else:
+        impar.append(n)
+
+    if len(par) >= 5:
+        for idx, value in enumerate(par):
+            print('par[{}] = {}'.format(idx, value))
+        par = []
+
+    elif len(impar) >= 5:
+        for idx, value in enumerate(impar):
+            print('impar[{}] = {}'.format(idx, value))
+        impar = []
+
+for idx, value in enumerate(impar):
+    print('impar[{}] = {}'.format(idx, value))
+
+for idx, value in enumerate(par):
+    print('par[{}] = {}'.format(idx, value))
+
