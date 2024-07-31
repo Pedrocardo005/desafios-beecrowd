@@ -1,27 +1,17 @@
-par = []
-impar = []
+n = int(input())
 
-for x in range(0, 15):
-    n = int(input())
+linha = input()
 
-    if n % 2 == 0:
-        par.append(n)
-    else:
-        impar.append(n)
+numeros = linha.split(' ')
 
-    if len(par) >= 5:
-        for idx, value in enumerate(par):
-            print('par[{}] = {}'.format(idx, value))
-        par = []
+menor_valor = 9999999
+posicao_menor = 0
 
-    elif len(impar) >= 5:
-        for idx, value in enumerate(impar):
-            print('impar[{}] = {}'.format(idx, value))
-        impar = []
+for x in range(0, len(numeros)):
+    numero = int(numeros[x])
+    if numero < menor_valor:
+        menor_valor = numero
+        posicao_menor = x
 
-for idx, value in enumerate(impar):
-    print('impar[{}] = {}'.format(idx, value))
-
-for idx, value in enumerate(par):
-    print('par[{}] = {}'.format(idx, value))
-
+print('Menor valor: {}'.format(menor_valor))
+print('Posicao: {}'.format(posicao_menor))
