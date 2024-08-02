@@ -12,12 +12,13 @@ for linha in range(0, 12):
     for coluna in range(0, 12):
         lista[linha][coluna] = float(input())
 
-if operacao == 'S':
-    for coluna in range(0,12):
-        resultado += lista[linha_operacao][coluna]
+for coluna in range(0,12):
+    resultado += lista[linha_operacao][coluna]
 
-else:
-    for coluna in range(0,12):
-        resultado *= lista[linha_operacao][coluna]
+if operacao == 'S':
+    pass
+
+elif operacao == 'M':
+    resultado /= 12
 
 print('{:.1f}'.format(resultado))
