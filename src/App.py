@@ -1,17 +1,23 @@
-n = int(input())
+linha_operacao = int(input())
+operacao = input()
 
-linha = input()
+lista = [None] * 12
 
-numeros = linha.split(' ')
+resultado = 0
 
-menor_valor = 9999999
-posicao_menor = 0
+for x in range(0, 12):
+    lista[x] = [None] * 12
 
-for x in range(0, len(numeros)):
-    numero = int(numeros[x])
-    if numero < menor_valor:
-        menor_valor = numero
-        posicao_menor = x
+for linha in range(0, 12):
+    for coluna in range(0, 12):
+        lista[linha][coluna] = float(input())
 
-print('Menor valor: {}'.format(menor_valor))
-print('Posicao: {}'.format(posicao_menor))
+if operacao == 'S':
+    for coluna in range(0,12):
+        resultado += lista[linha_operacao][coluna]
+
+else:
+    for coluna in range(0,12):
+        resultado *= lista[linha_operacao][coluna]
+
+print('{:.1f}'.format(resultado))
