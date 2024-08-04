@@ -1,4 +1,4 @@
-linha_operacao = int(input())
+coluna_operacao = int(input())
 operacao = input()
 
 lista = [None] * 12
@@ -12,8 +12,8 @@ for linha in range(0, 12):
     for coluna in range(0, 12):
         lista[linha][coluna] = float(input())
 
-for coluna in range(0,12):
-    resultado += lista[linha_operacao][coluna]
+for linha in range(0,12):
+    resultado += lista[linha][coluna_operacao]
 
 if operacao == 'S':
     pass
