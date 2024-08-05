@@ -1,4 +1,3 @@
-coluna_operacao = int(input())
 operacao = input()
 
 lista = [None] * 12
@@ -11,14 +10,17 @@ for x in range(0, 12):
 for linha in range(0, 12):
     for coluna in range(0, 12):
         lista[linha][coluna] = float(input())
-
+distancia = 1
 for linha in range(0,12):
-    resultado += lista[linha][coluna_operacao]
+    for coluna in range(distancia, 12):
+        resultado += lista[linha][coluna]
+
+    distancia += 1
 
 if operacao == 'S':
     pass
 
 elif operacao == 'M':
-    resultado /= 12
+    resultado /= 66
 
 print('{:.1f}'.format(resultado))
