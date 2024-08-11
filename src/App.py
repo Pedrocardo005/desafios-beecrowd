@@ -10,12 +10,12 @@ for x in range(0, 12):
 for linha in range(0, 12):
     for coluna in range(0, 12):
         lista[linha][coluna] = float(input())
-distancia = 0
+distancia = 11
 for linha in range(0,12):
     for coluna in range(0, distancia):
         resultado += lista[linha][coluna]
 
-    distancia += 1
+    distancia -= 1
 
 if operacao == 'S':
     pass
