@@ -12,7 +12,7 @@ for linha in range(0, 12):
         lista[linha][coluna] = float(input())
 distancia = 11
 for linha in range(0,12):
-    for coluna in range(0, distancia):
+    for coluna in range(11, distancia, -1):
         resultado += lista[linha][coluna]
 
     distancia -= 1
