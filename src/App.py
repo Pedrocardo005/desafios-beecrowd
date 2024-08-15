@@ -10,17 +10,23 @@ for x in range(0, 12):
 for linha in range(0, 12):
     for coluna in range(0, 12):
         lista[linha][coluna] = float(input())
-distancia = 11
+
+begin = 1
+end = 11
 for linha in range(0,12):
-    for coluna in range(11, distancia, -1):
+
+    if begin >= end:
+        break
+    for coluna in range(begin, end):
         resultado += lista[linha][coluna]
 
-    distancia -= 1
+    begin += 1
+    end -= 1
 
 if operacao == 'S':
     pass
 
 elif operacao == 'M':
-    resultado /= 66
+    resultado /= 30
 
 print('{:.1f}'.format(resultado))
