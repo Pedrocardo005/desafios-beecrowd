@@ -11,17 +11,17 @@ for linha in range(0, 12):
     for coluna in range(0, 12):
         lista[linha][coluna] = float(input())
 
-begin = 1
-end = 11
+begin = 12
+end = 0
 for linha in range(0,12):
 
-    if begin >= end:
+    if end - begin < 2:
         break
     for coluna in range(begin, end):
         resultado += lista[linha][coluna]
 
-    begin += 1
-    end -= 1
+    begin -= 1
+    end += 1
 
 if operacao == 'S':
     pass
