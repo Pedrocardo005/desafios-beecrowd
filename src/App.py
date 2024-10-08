@@ -14,16 +14,13 @@ for linha in range(0, 12):
 begin = 0
 end = 0
 somatorio = 1
-for linha in range(0,12):
 
-    if linha == 5 or linha == 6:
-        somatorio = 0
-    elif linha == 6:
-        somatorio = -1
-    for coluna in range(begin, end):
-        resultado += lista[linha][coluna]
-
-    end += somatorio
+for linha in range(0, 12):
+    for coluna in range(0, 12):
+        if linha > 0 and linha < 11:
+            if coluna == linha or (coluna + linha) == 11 :
+                break
+            resultado += lista[linha][coluna]
 
 if operacao == 'S':
     pass
