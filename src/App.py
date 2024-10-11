@@ -1,31 +1,20 @@
-operacao = input()
+vector_len = int(input())
 
-lista = [None] * 12
+less = 9999
+less_index = 0
 
-resultado = 0
+vector = input()
+vector = vector.split(' ')
 
-for x in range(0, 12):
-    lista[x] = [None] * 12
+for index, value in enumerate(vector):
+    try:
+        read = int(value)
+    except ValueError:
+        continue
 
-for linha in range(0, 12):
-    for coluna in range(0, 12):
-        lista[linha][coluna] = float(input())
+    if read < less:
+        less = read
+        less_index = index
 
-begin = 0
-end = 0
-somatorio = 1
-
-for linha in range(0, 12):
-    for coluna in range(0, 12):
-        if linha > 0 and linha < 11:
-            if coluna == linha or (coluna + linha) == 11 :
-                break
-            resultado += lista[linha][coluna]
-
-if operacao == 'S':
-    pass
-
-elif operacao == 'M':
-    resultado /= 30
-
-print('{:.1f}'.format(resultado))
+print(f'Menor valor: {less}')
+print(f'Posicao: {less_index}')
