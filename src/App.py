@@ -1,20 +1,11 @@
-vector_len = int(input())
+tipo_char = int(input())
 
-less = 9999
-less_index = 0
+respostas_competidores = input()
 
-vector = input()
-vector = vector.split(' ')
+acertos = 0
 
-for index, value in enumerate(vector):
-    try:
-        read = int(value)
-    except ValueError:
-        continue
+for valor in respostas_competidores.split(' '):
+    if int(valor) == tipo_char:
+        acertos += 1
 
-    if read < less:
-        less = read
-        less_index = index
-
-print(f'Menor valor: {less}')
-print(f'Posicao: {less_index}')
+print(acertos)
