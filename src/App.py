@@ -1,20 +1,22 @@
-vector_len = int(input())
+op = input()
 
-less = 9999
-less_index = 0
+matriz = [None] * 12
 
-vector = input()
-vector = vector.split(' ')
+saida = 0.0
 
-for index, value in enumerate(vector):
-    try:
-        read = int(value)
-    except ValueError:
-        continue
+for index, element in enumerate(matriz):
+    matriz[index] = [None] * 12
 
-    if read < less:
-        less = read
-        less_index = index
+for line_index, element in enumerate(matriz):
+    for col_index, element in enumerate(matriz):
+        leitura = float(input())
+        matriz[line_index][col_index] = leitura
+        if line_index < 6 and line_index + col_index > 11:
+            saida += leitura
+        elif line_index >= 6 and col_index - line_index > 0:
+            saida += leitura
 
-print(f'Menor valor: {less}')
-print(f'Posicao: {less_index}')
+if op == 'M':
+    saida /= 30
+
+print(round(saida, 1))
