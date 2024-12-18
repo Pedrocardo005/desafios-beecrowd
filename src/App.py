@@ -1,44 +1,58 @@
-
-
-def resolve_question(salario: float):
+def resolve_question(propriedade: str):
     """
-    >>> resolve_question(3002.00)
-    'R$ 80.36'
-    >>> resolve_question(1701.12)
-    'Isento'
-    >>> resolve_question(4520.00)
-    'R$ 355.60'
+    >>> resolve_question('3 99')
+    1 2 3
+    4 5 6
+    7 8 9
+    10 11 12
+    13 14 15
+    16 17 18
+    19 20 21
+    22 23 24
+    25 26 27
+    28 29 30
+    31 32 33
+    34 35 36
+    37 38 39
+    40 41 42
+    43 44 45
+    46 47 48
+    49 50 51
+    52 53 54
+    55 56 57
+    58 59 60
+    61 62 63
+    64 65 66
+    67 68 69
+    70 71 72
+    73 74 75
+    76 77 78
+    79 80 81
+    82 83 84
+    85 86 87
+    88 89 90
+    91 92 93
+    94 95 96
+    97 98 99
     """
 
-    if salario <= 2000:
-        return "Isento"
+    x_y = propriedade.split(" ")
+    valor = 0
+    finished = False
+    while True:
+        lista_linha = []
+        for _ in range(0, int(x_y[0])):
+            valor += 1
+            lista_linha.append(str(valor))
+            if valor == int(x_y[1]):
+                finished = True
+                break
 
-    if salario <= 3000:
-        salario -= 2000
-        imposto = salario * 0.08
-        formatted_number = "%.2f" % imposto
-        return f'R$ {formatted_number}'
+        print(" ".join(lista_linha))
 
-    if salario <= 4500:
-        salario -= 2000
-        imposto_1 = 80.00
-        salario -= 1000
-        imposto_2 = salario * 0.18
-        impostos = imposto_1 + imposto_2
-        formatted_number = "%.2f" % impostos
-        return f'R$ {formatted_number}'
-
-    if salario > 4500:
-        salario -= 2000
-        imposto_1 = 80.00
-        salario -= 1000
-        imposto_2 = 1500 * 0.18
-        salario -= 1500
-        imposto_3 = salario * 0.28
-        impostos = imposto_1 + imposto_2 + imposto_3
-        formatted_number = "%.2f" % impostos
-        return f'R$ {formatted_number}'
+        if finished:
+            break
 
 
-valor = float(input())
-print(resolve_question(valor))
+entrada = input()
+resolve_question(entrada)
