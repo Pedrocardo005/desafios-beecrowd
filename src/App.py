@@ -1,44 +1,47 @@
 
 
-def resolve_question(salario: float):
+def resolve_question(dados: str):
     """
-    >>> resolve_question(3002.00)
-    'R$ 80.36'
-    >>> resolve_question(1701.12)
-    'Isento'
-    >>> resolve_question(4520.00)
-    'R$ 355.60'
+    >>> resolve_question('100 150 1.0 0')
+    '51 anos.'
+    >>> resolve_question('90000 120000 5.5 3.5')
+    '16 anos.'
+    >>> resolve_question('56700 72000 5.2 3.0')
+    '12 anos.'
+    >>> resolve_question('123 2000 3.0 2.0')
+    'Mais de 1 seculo.'
+    >>> resolve_question('100000 110000 1.5 0.5')
+    '10 anos.'
+    >>> resolve_question('62422 484317 3.1 1.0')
+    '100 anos.'
     """
 
-    if salario <= 2000:
-        return "Isento"
+    valores = dados.split(' ')
+    pa = int(valores[0])  # População A
+    pb = int(valores[1])  # População B
+    g1 = float(valores[2])  # Taxa de crescimento A (%)
+    g2 = float(valores[3])  # Taxa de crescimento B (%)
 
-    if salario <= 3000:
-        salario -= 2000
-        imposto = salario * 0.08
-        formatted_number = "%.2f" % imposto
-        return f'R$ {formatted_number}'
+    anos = 0
+    while pa <= pb:
+        # Atualiza populações com as taxas de crescimento
+        pa += int(pa * (g1 / 100))
+        pb += int(pb * (g2 / 100))
 
-    if salario <= 4500:
-        salario -= 2000
-        imposto_1 = 80.00
-        salario -= 1000
-        imposto_2 = salario * 0.18
-        impostos = imposto_1 + imposto_2
-        formatted_number = "%.2f" % impostos
-        return f'R$ {formatted_number}'
+        anos += 1
 
-    if salario > 4500:
-        salario -= 2000
-        imposto_1 = 80.00
-        salario -= 1000
-        imposto_2 = 1500 * 0.18
-        salario -= 1500
-        imposto_3 = salario * 0.28
-        impostos = imposto_1 + imposto_2 + imposto_3
-        formatted_number = "%.2f" % impostos
-        return f'R$ {formatted_number}'
+        # Limita o número de anos a 100
+        if anos > 100:
+            return 'Mais de 1 seculo.'
+
+    return f'{anos} anos.'
 
 
-valor = float(input())
-print(resolve_question(valor))
+x = int(input())
+for _ in range(0, x):
+    valor = input()
+    print(resolve_question(valor))
+
+# if __name__ == "__main__":
+#    import doctest
+#    doctest.testmod()
