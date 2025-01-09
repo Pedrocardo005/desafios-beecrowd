@@ -31,8 +31,11 @@ def resolve_question(valor_matriz: int):
             initial_y += initial_y
         initial_x += initial_x
 
+    len_spaces = len(str(initial_x))
+
     for x in range(0, valor_matriz):
-        print(" ".join(matriz[x]))
+        for x in range(0, len(matriz[x])):
+            len_spaces
 
     print()
 
